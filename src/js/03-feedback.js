@@ -3,10 +3,10 @@ import throttle from 'lodash.throttle';
 const LOCAL_KEY = 'feedback-form-state';
 let formData = JSON.parse(localStorage.getItem(LOCAL_KEY)) || {};
 
-form = document.querySelector('.feedback-form');
+form_e_m = document.querySelector('.feedback-form');
 
-form.addEventListener('input', throttle(storageFormData, 500));
-form.addEventListener('submit', onFormSubmit);
+form_e_m.addEventListener('input', throttle(storageFormData, 500));
+form_e_m.addEventListener('submit', onFormSubmit);
 
 reloadPage();
 
@@ -25,7 +25,7 @@ function onFormSubmit(e_m) {
 
 function reloadPage() {
   if (formData) {
-    let { email, message } = form.elements;
+    let { email, message } = form_e_m.elements;
     email.value = formData.email || '';
     message.value = formData.message || '';
   }
